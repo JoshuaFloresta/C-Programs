@@ -11,32 +11,36 @@
         // Public properties
         public string EmployeeId
         {
-            get { return employeeId; }
-            set { employeeId = value; }
+            get { return this.employeeId; }
+            set { this.employeeId = value; }
         }
 
         public string FirstName
         {
-            get { return firstName; }
-            set { firstName = value; }
+            get { return this.firstName; }
+            set { this.firstName = value; }
         }
 
         public string LastName
         {
-            get { return lastName; }
-            set { lastName = value; }
+            get { return this.lastName; }
+            set { this.lastName = value; }
         }
 
         public string Position
         {
             get { return position; }
-            set { position = value; }
+            set { this.position = value; }
         }
 
-        // Constructor 1 (no parameters)
-        public Employee() { }
+        public Employee(string firstName, string lastName)
+        {
+            this.employeeId = "";
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.position = "";
+        }
 
-        // Constructor 2 (with parameters)
         public Employee(string employeeId, string firstName, string lastName, string position)
         {
             this.EmployeeId = employeeId;
@@ -45,8 +49,5 @@
             this.Position = position;
         }
 
-        // Constructor 3 (partial data, uses 'this' to call another constructor)
-        public Employee(string employeeId, string firstName)
-            : this(employeeId, firstName, "N/A", "N/A") { }
     }
 }

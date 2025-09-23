@@ -76,7 +76,7 @@
             // 
             // employeeId
             // 
-            employeeId.Location = new Point(24, 69);
+            employeeId.Location = new Point(24, 70);
             employeeId.Name = "employeeId";
             employeeId.Size = new Size(190, 23);
             employeeId.TabIndex = 2;
@@ -160,12 +160,12 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(234, 46);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(463, 244);
+            dataGridView1.Size = new Size(410, 244);
             dataGridView1.TabIndex = 12;
             // 
             // frmEmployeeDatabase
             // 
-            ClientSize = new Size(709, 302);
+            ClientSize = new Size(656, 302);
             Controls.Add(dataGridView1);
             Controls.Add(label7);
             Controls.Add(submitBtn);
