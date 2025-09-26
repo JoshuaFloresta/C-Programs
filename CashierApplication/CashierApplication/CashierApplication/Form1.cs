@@ -82,7 +82,7 @@ namespace CashierApplication
 
             double totalPrice = item.GetTotalPrice();
 
-            total_price.Text = ": " + totalPrice.ToString("F2");
+            total_price.Text = "₱" + totalPrice.ToString();
 
             total_price.Visible = true;
         }
@@ -93,13 +93,22 @@ namespace CashierApplication
             double itemPrice = Convert.ToDouble(itemBox.Text);
             int itemQuantity = Convert.ToInt32(item_quantity.Text);
             double itemDiscount = Convert.ToDouble(item_discount.Text);
-            double paymentAmount = Convert.ToDouble(payment_amount);
+            double paymentAmount = Convert.ToDouble(payment_amount.Text);
 
-            DiscountedItem item = new DiscountedItem(itemName, itemPrice, itemQuantity, itemDiscount);
 
-            // Now compute change
+            DiscountedItem item = new DiscountedItem(itemName, itemPrice, itemQuantity, itemDiscount);            
+            item.SetPayment(paymentAmount);
+
+            item.GetTotalPrice();
+            
+            if(paymentAmount < item.GetTotalPrice())
+            {
+                MessageBox.Show("Insufficient Payment", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             double changeAmount = item.getChange();
-            change.Text = ": " + changeAmount.ToString("F2");
+            change.Text = "₱" + changeAmount.ToString();
             change.Visible = true;
 
         }

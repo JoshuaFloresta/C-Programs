@@ -40,8 +40,8 @@
             label4 = new Label();
             label5 = new Label();
             total_price = new Label();
-            payment_amount = new Label();
-            textBox5 = new TextBox();
+            payment_label = new Label();
+            payment_amount = new TextBox();
             button2 = new Button();
             change = new Label();
             label9 = new Label();
@@ -68,9 +68,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(14, 75);
             label1.Name = "label1";
-            label1.Size = new Size(39, 15);
+            label1.Size = new Size(49, 15);
             label1.TabIndex = 2;
-            label1.Text = "Price: ";
+            label1.Text = "Price ₱: ";
             // 
             // itemBox
             // 
@@ -148,21 +148,21 @@
             total_price.Text = "total_amount";
             total_price.Visible = false;
             // 
+            // payment_label
+            // 
+            payment_label.AutoSize = true;
+            payment_label.Location = new Point(14, 166);
+            payment_label.Name = "payment_label";
+            payment_label.Size = new Size(110, 15);
+            payment_label.TabIndex = 12;
+            payment_label.Text = "Payment Received: ";
+            // 
             // payment_amount
             // 
-            payment_amount.AutoSize = true;
-            payment_amount.Location = new Point(14, 166);
+            payment_amount.Location = new Point(130, 162);
             payment_amount.Name = "payment_amount";
-            payment_amount.Size = new Size(110, 15);
-            payment_amount.TabIndex = 12;
-            payment_amount.Text = "Payment Received: ";
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(130, 162);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(88, 23);
-            textBox5.TabIndex = 13;
+            payment_amount.Size = new Size(88, 23);
+            payment_amount.TabIndex = 13;
             // 
             // button2
             // 
@@ -201,8 +201,8 @@
             Controls.Add(change);
             Controls.Add(label9);
             Controls.Add(button2);
-            Controls.Add(textBox5);
             Controls.Add(payment_amount);
+            Controls.Add(payment_label);
             Controls.Add(total_price);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -235,8 +235,8 @@
         private Label label4;
         private Label label5;
         private Label total_price;
-        private Label payment_amount;
-        private TextBox textBox5;
+        private Label payment_label;
+        private TextBox payment_amount;
         private Button button2;
         private Label change;
         private Label label9;
