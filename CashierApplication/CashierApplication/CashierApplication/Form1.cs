@@ -1,17 +1,19 @@
+using System.Diagnostics;
 using System.Security.Cryptography.X509Certificates;
+using System.Xml.Linq;
 
 namespace CashierApplication
 {
     public partial class frmPurchaseDiscount : Form
     {
 
-        class Item
+        abstract class Item
         {
             protected string item_name;
             protected double item_price;
             protected int item_quantity;
-            private double total_price ; 
-       
+            private double total_price;
+
 
             public Item(string item_name, double item_price, int item_quantity)
             {
@@ -20,16 +22,10 @@ namespace CashierApplication
                 this.item_quantity = item_quantity;
             }
 
-            public double getTotalPrice()
-            {
-                total_price = item_price * item_quantity;
-                return total_price;
-            }
+            public abstract double GetTotalPrice();
 
-            public void setPayment(double amount)
-            {
-                return;
-            }
+            public abstract void SetPayment(double amount);
+
 
         }
 
@@ -45,9 +41,28 @@ namespace CashierApplication
                 this.item_name = item_name;
                 this.item_price = item_price;
                 this.item_quantity = item_quantity;
-                //this.item_discount = item_discount;
+                this.item_discount = item_discount;
             }
 
+            public override double GetTotalPrice()
+            {
+                double discount = item_discount * 0.01;
+                double discount_value = discount * item_price;
+                discounted_price = item_quantity * (item_price - discount_value);
+
+                return discounted_price;
+            }
+
+            public override void SetPayment(double amount)
+            {
+                payment_amount = amount;
+            }
+
+            public double getChange()
+            {
+                change = payment_amount - discounted_price;
+                return change;
+            }
         }
 
         public frmPurchaseDiscount()
@@ -59,6 +74,33 @@ namespace CashierApplication
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string itemName = item_name.Text;
+            double itemPrice = Convert.ToDouble(itemBox.Text);
+            int itemQuantity = Convert.ToInt32(item_quantity.Text);
+            double itemDiscount = Convert.ToDouble(item_discount.Text);
+            DiscountedItem item = new DiscountedItem(itemName, itemPrice, itemQuantity, itemDiscount);
+
+            double totalPrice = item.GetTotalPrice();
+
+            total_price.Text = ": " + totalPrice.ToString("F2");
+
+            total_price.Visible = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string itemName = item_name.Text;
+            double itemPrice = Convert.ToDouble(itemBox.Text);
+            int itemQuantity = Convert.ToInt32(item_quantity.Text);
+            double itemDiscount = Convert.ToDouble(item_discount.Text);
+            double paymentAmount = Convert.ToDouble(payment_amount);
+
+            DiscountedItem item = new DiscountedItem(itemName, itemPrice, itemQuantity, itemDiscount);
+
+            // Now compute change
+            double changeAmount = item.getChange();
+            change.Text = ": " + changeAmount.ToString("F2");
+            change.Visible = true;
 
         }
     }

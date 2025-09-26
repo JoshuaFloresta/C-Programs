@@ -31,12 +31,12 @@
             item_label = new Label();
             item_name = new TextBox();
             label1 = new Label();
-            item_price = new TextBox();
+            itemBox = new TextBox();
             label2 = new Label();
             label3 = new Label();
             item_discount = new TextBox();
             item_quantity = new TextBox();
-            button1 = new Button();
+            compute_btn = new Button();
             label4 = new Label();
             label5 = new Label();
             total_price = new Label();
@@ -72,12 +72,12 @@
             label1.TabIndex = 2;
             label1.Text = "Price: ";
             // 
-            // item_price
+            // itemBox
             // 
-            item_price.Location = new Point(57, 71);
-            item_price.Name = "item_price";
-            item_price.Size = new Size(106, 23);
-            item_price.TabIndex = 3;
+            itemBox.Location = new Point(57, 71);
+            itemBox.Name = "itemBox";
+            itemBox.Size = new Size(106, 23);
+            itemBox.TabIndex = 3;
             // 
             // label2
             // 
@@ -111,15 +111,15 @@
             item_quantity.Size = new Size(76, 23);
             item_quantity.TabIndex = 7;
             // 
-            // button1
+            // compute_btn
             // 
-            button1.Location = new Point(89, 100);
-            button1.Name = "button1";
-            button1.Size = new Size(74, 26);
-            button1.TabIndex = 8;
-            button1.Text = "Compute";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            compute_btn.Location = new Point(89, 100);
+            compute_btn.Name = "compute_btn";
+            compute_btn.Size = new Size(74, 26);
+            compute_btn.TabIndex = 8;
+            compute_btn.Text = "Compute";
+            compute_btn.UseVisualStyleBackColor = true;
+            compute_btn.Click += button1_Click;
             // 
             // label4
             // 
@@ -172,6 +172,7 @@
             button2.TabIndex = 14;
             button2.Text = "Submit";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // change
             // 
@@ -205,12 +206,12 @@
             Controls.Add(total_price);
             Controls.Add(label5);
             Controls.Add(label4);
-            Controls.Add(button1);
+            Controls.Add(compute_btn);
             Controls.Add(item_quantity);
             Controls.Add(item_discount);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(item_price);
+            Controls.Add(itemBox);
             Controls.Add(label1);
             Controls.Add(item_name);
             Controls.Add(item_label);
@@ -225,12 +226,12 @@
         private Label item_label;
         private TextBox item_name;
         private Label label1;
-        private TextBox item_price;
+        private TextBox itemBox;
         private Label label2;
         private Label label3;
         private TextBox item_discount;
         private TextBox item_quantity;
-        private Button button1;
+        private Button compute_btn;
         private Label label4;
         private Label label5;
         private Label total_price;
