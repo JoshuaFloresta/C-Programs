@@ -6,6 +6,10 @@ namespace CashierApplication
 {
     public partial class frmPurchaseDiscount : Form
     {
+        public frmPurchaseDiscount()
+        {
+            InitializeComponent();
+        }
 
         abstract class Item
         {
@@ -25,18 +29,17 @@ namespace CashierApplication
             public abstract double GetTotalPrice();
 
             public abstract void SetPayment(double amount);
-
-
         }
 
-        class DiscountedItem : Item
+        class DiscountedItem : Item 
         {
             private double item_discount;
             private double discounted_price;
             private double payment_amount;
             private double change;
 
-            public DiscountedItem(string item_name, double item_price, int item_quantity, double item_discount) : base(item_name, item_price, item_quantity)
+            public DiscountedItem(string item_name, double item_price, int item_quantity, double item_discount) 
+                : base(item_name, item_price, item_quantity)
             {
                 this.item_name = item_name;
                 this.item_price = item_price;
@@ -64,13 +67,6 @@ namespace CashierApplication
                 return change;
             }
         }
-
-        public frmPurchaseDiscount()
-        {
-            InitializeComponent();
-        }
-
-
 
         private void button1_Click(object sender, EventArgs e)
         {
