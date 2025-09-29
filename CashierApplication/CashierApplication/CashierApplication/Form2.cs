@@ -15,6 +15,8 @@ namespace CashierApplication
         public frmLoginAccount()
         {
             InitializeComponent();
+            passwordBox.PasswordChar = '*';
+
         }
 
         abstract class UserAccount
