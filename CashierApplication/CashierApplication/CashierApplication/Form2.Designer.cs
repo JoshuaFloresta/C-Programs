@@ -1,6 +1,6 @@
 ﻿namespace CashierApplication
 {
-    partial class Form2
+    partial class frmLoginAccount
     {
         /// <summary>
         /// Required designer variable.
@@ -92,7 +92,7 @@
             label3.TabIndex = 5;
             label3.Text = "Login";
             // 
-            // Form2
+            // frmLoginAccount
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -103,7 +103,7 @@
             Controls.Add(label2);
             Controls.Add(UnameBox);
             Controls.Add(label1);
-            Name = "Form2";
+            Name = "frmLoginAccount";
             Text = "Form2";
             ResumeLayout(false);
             PerformLayout();

@@ -9,6 +9,9 @@ namespace CashierApplication
         public frmPurchaseDiscount()
         {
             InitializeComponent();
+
+            Menu.Items.Add("Logout");
+            Menu.Items.Add("Exit");
         }
 
         abstract class Item
@@ -31,14 +34,14 @@ namespace CashierApplication
             public abstract void SetPayment(double amount);
         }
 
-        class DiscountedItem : Item 
+        class DiscountedItem : Item
         {
             private double item_discount;
             private double discounted_price;
             private double payment_amount;
             private double change;
 
-            public DiscountedItem(string item_name, double item_price, int item_quantity, double item_discount) 
+            public DiscountedItem(string item_name, double item_price, int item_quantity, double item_discount)
                 : base(item_name, item_price, item_quantity)
             {
                 this.item_name = item_name;
@@ -92,12 +95,12 @@ namespace CashierApplication
             double paymentAmount = Convert.ToDouble(payment_amount.Text);
 
 
-            DiscountedItem item = new DiscountedItem(itemName, itemPrice, itemQuantity, itemDiscount);            
+            DiscountedItem item = new DiscountedItem(itemName, itemPrice, itemQuantity, itemDiscount);
             item.SetPayment(paymentAmount);
 
             item.GetTotalPrice();
-            
-            if(paymentAmount < item.GetTotalPrice())
+
+            if (paymentAmount < item.GetTotalPrice())
             {
                 MessageBox.Show("Insufficient Payment", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -107,6 +110,21 @@ namespace CashierApplication
             change.Text = "₱" + changeAmount.ToString();
             change.Visible = true;
 
+        }
+
+        private void ToolStripComboBox1_Click_1(object sender, EventArgs e)
+        {
+          if (Menu.SelectedItem == "Logout")
+            {
+                this.Hide();
+                frmLoginAccount loginForm = new frmLoginAccount();
+                loginForm.Show();
+            }
+
+            else if (Menu.SelectedItem == "Exit")
+            {
+                Application.Exit();
+            }
         }
     }
 }

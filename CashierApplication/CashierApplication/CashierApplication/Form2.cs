@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CashierApplication
 {
-    public partial class Form2 : Form
+    public partial class frmLoginAccount : Form
     {
-        public Form2()
+        public frmLoginAccount()
         {
             InitializeComponent();
         }
@@ -66,6 +66,22 @@ namespace CashierApplication
 
             Cashier cashier = new Cashier("Joshua Floresta", "Sales", "Joshz", "01cashier");
 
+            if(user_name == "" || user_password == "")
+            {
+                MessageBox.Show("Please fill in all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if(cashier.ValidateLogin(user_name, user_password))
+            {
+                MessageBox.Show($"Welcome {cashier.GetFullName()} from {cashier.GetDepartment()} department!", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Hide();
+                frmPurchaseDiscount purchaseForm = new frmPurchaseDiscount();
+                purchaseForm.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
     }

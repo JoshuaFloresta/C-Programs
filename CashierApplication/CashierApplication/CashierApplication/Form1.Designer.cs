@@ -45,12 +45,15 @@
             button2 = new Button();
             change = new Label();
             label9 = new Label();
+            menuStrip1 = new MenuStrip();
+            Menu = new ToolStripComboBox();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // item_label
             // 
             item_label.AutoSize = true;
-            item_label.Location = new Point(12, 24);
+            item_label.Location = new Point(15, 62);
             item_label.Name = "item_label";
             item_label.Size = new Size(34, 15);
             item_label.TabIndex = 0;
@@ -58,7 +61,7 @@
             // 
             // item_name
             // 
-            item_name.Location = new Point(12, 42);
+            item_name.Location = new Point(15, 80);
             item_name.Name = "item_name";
             item_name.Size = new Size(151, 23);
             item_name.TabIndex = 1;
@@ -66,7 +69,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(14, 75);
+            label1.Location = new Point(17, 113);
             label1.Name = "label1";
             label1.Size = new Size(49, 15);
             label1.TabIndex = 2;
@@ -74,7 +77,7 @@
             // 
             // itemBox
             // 
-            itemBox.Location = new Point(57, 71);
+            itemBox.Location = new Point(60, 109);
             itemBox.Name = "itemBox";
             itemBox.Size = new Size(106, 23);
             itemBox.TabIndex = 3;
@@ -82,7 +85,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(172, 22);
+            label2.Location = new Point(175, 60);
             label2.Name = "label2";
             label2.Size = new Size(81, 15);
             label2.TabIndex = 4;
@@ -91,7 +94,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(172, 74);
+            label3.Location = new Point(175, 112);
             label3.Name = "label3";
             label3.Size = new Size(56, 15);
             label3.TabIndex = 5;
@@ -99,21 +102,21 @@
             // 
             // item_discount
             // 
-            item_discount.Location = new Point(169, 42);
+            item_discount.Location = new Point(172, 80);
             item_discount.Name = "item_discount";
             item_discount.Size = new Size(141, 23);
             item_discount.TabIndex = 6;
             // 
             // item_quantity
             // 
-            item_quantity.Location = new Point(234, 74);
+            item_quantity.Location = new Point(237, 112);
             item_quantity.Name = "item_quantity";
             item_quantity.Size = new Size(76, 23);
             item_quantity.TabIndex = 7;
             // 
             // compute_btn
             // 
-            compute_btn.Location = new Point(89, 100);
+            compute_btn.Location = new Point(92, 138);
             compute_btn.Name = "compute_btn";
             compute_btn.Size = new Size(74, 26);
             compute_btn.TabIndex = 8;
@@ -124,7 +127,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(191, 142);
+            label4.Location = new Point(194, 180);
             label4.Name = "label4";
             label4.Size = new Size(0, 15);
             label4.TabIndex = 9;
@@ -132,7 +135,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(57, 142);
+            label5.Location = new Point(60, 180);
             label5.Name = "label5";
             label5.Size = new Size(83, 15);
             label5.TabIndex = 10;
@@ -141,7 +144,7 @@
             // total_price
             // 
             total_price.AutoSize = true;
-            total_price.Location = new Point(146, 142);
+            total_price.Location = new Point(149, 180);
             total_price.Name = "total_price";
             total_price.Size = new Size(78, 15);
             total_price.TabIndex = 11;
@@ -151,7 +154,7 @@
             // payment_label
             // 
             payment_label.AutoSize = true;
-            payment_label.Location = new Point(14, 166);
+            payment_label.Location = new Point(17, 204);
             payment_label.Name = "payment_label";
             payment_label.Size = new Size(110, 15);
             payment_label.TabIndex = 12;
@@ -159,14 +162,14 @@
             // 
             // payment_amount
             // 
-            payment_amount.Location = new Point(130, 162);
+            payment_amount.Location = new Point(133, 200);
             payment_amount.Name = "payment_amount";
             payment_amount.Size = new Size(88, 23);
             payment_amount.TabIndex = 13;
             // 
             // button2
             // 
-            button2.Location = new Point(224, 160);
+            button2.Location = new Point(227, 198);
             button2.Name = "button2";
             button2.Size = new Size(75, 26);
             button2.TabIndex = 14;
@@ -177,7 +180,7 @@
             // change
             // 
             change.AutoSize = true;
-            change.Location = new Point(114, 197);
+            change.Location = new Point(117, 235);
             change.Name = "change";
             change.Size = new Size(46, 15);
             change.TabIndex = 16;
@@ -187,17 +190,33 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(57, 197);
+            label9.Location = new Point(60, 235);
             label9.Name = "label9";
             label9.Size = new Size(51, 15);
             label9.TabIndex = 15;
             label9.Text = "Change:";
             // 
+            // menuStrip1
+            // 
+            menuStrip1.Items.AddRange(new ToolStripItem[] { Menu });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(341, 27);
+            menuStrip1.TabIndex = 17;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // Menu
+            // 
+            Menu.Name = "Menu";
+            Menu.Size = new Size(121, 23);
+            Menu.Text = "File";
+            Menu.Click += ToolStripComboBox1_Click_1;
+            // 
             // frmPurchaseDiscount
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(322, 269);
+            ClientSize = new Size(341, 285);
             Controls.Add(change);
             Controls.Add(label9);
             Controls.Add(button2);
@@ -215,8 +234,12 @@
             Controls.Add(label1);
             Controls.Add(item_name);
             Controls.Add(item_label);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             Name = "frmPurchaseDiscount";
             Text = "Purchase Discounted Item";
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -240,5 +263,7 @@
         private Button button2;
         private Label change;
         private Label label9;
+        private MenuStrip menuStrip1;
+        private ToolStripComboBox Menu;
     }
 }
