@@ -42,7 +42,7 @@
             txtQuantity = new TextBox();
             txtSellPrice = new TextBox();
             gridViewProductList = new DataGridView();
-            richTextBox1 = new RichTextBox();
+            richTxtDescription = new RichTextBox();
             label8 = new Label();
             btnAddProduct = new Button();
             ((System.ComponentModel.ISupportInitialize)gridViewProductList).BeginInit();
@@ -169,13 +169,13 @@
             gridViewProductList.Size = new Size(655, 140);
             gridViewProductList.TabIndex = 13;
             // 
-            // richTextBox1
+            // richTxtDescription
             // 
-            richTextBox1.Location = new Point(355, 105);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(325, 124);
-            richTextBox1.TabIndex = 14;
-            richTextBox1.Text = "";
+            richTxtDescription.Location = new Point(355, 105);
+            richTxtDescription.Name = "richTxtDescription";
+            richTxtDescription.Size = new Size(325, 124);
+            richTxtDescription.TabIndex = 14;
+            richTxtDescription.Text = "";
             // 
             // label8
             // 
@@ -189,12 +189,13 @@
             // 
             // btnAddProduct
             // 
-            btnAddProduct.Location = new Point(582, 238);
+            btnAddProduct.Location = new Point(577, 240);
             btnAddProduct.Name = "btnAddProduct";
-            btnAddProduct.Size = new Size(98, 23);
+            btnAddProduct.Size = new Size(101, 26);
             btnAddProduct.TabIndex = 16;
             btnAddProduct.Text = "Add Product";
             btnAddProduct.UseVisualStyleBackColor = true;
+            btnAddProduct.Click += btnAddProduct_Click;
             // 
             // frmAddProduct
             // 
@@ -203,7 +204,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(btnAddProduct);
             Controls.Add(label8);
-            Controls.Add(richTextBox1);
+            Controls.Add(richTxtDescription);
             Controls.Add(gridViewProductList);
             Controls.Add(txtSellPrice);
             Controls.Add(txtQuantity);
@@ -220,6 +221,7 @@
             Controls.Add(label1);
             Name = "frmAddProduct";
             Text = "Inventory";
+            Load += frmAddProduct_Load;
             ((System.ComponentModel.ISupportInitialize)gridViewProductList).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -241,7 +243,7 @@
         private TextBox txtQuantity;
         private TextBox txtSellPrice;
         private DataGridView gridViewProductList;
-        private RichTextBox richTextBox1;
+        private RichTextBox richTxtDescription;
         private Label label8;
         private Button btnAddProduct;
     }
